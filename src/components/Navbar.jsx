@@ -31,26 +31,26 @@ export default function Navbar() {
             <div className="flex flex-row justify-around items-center px-6 py-4 bg-[#2A1103] text-white">
                 {/* Logo */}
                 <img className='w-20 h-5 flex shrink-0' src={Logo} alt="" />
-                <Link to={"/"}>
+                <Link to='/'>
                     {/* <img className='h-[20%] w-[20%]' src={Logo} alt="" /> */}
                 </Link>
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex space-x-8">
-                    <Link to={"/"} className="hover:text-[#D47125] text-sm font-[outfit] cursor-pointer">HOME</Link>
-                    <Link to={"/about-us"} className="hover:text-[#D47125] text-sm font-[outfit] cursor-pointer">SHOP</Link>
-                    <Link to={"/contact"} className="hover:text-[#D47125] text-sm font-[outfit] cursor-pointer">ABOUT US</Link>
-                    <Link to={"/signupuser"} className="hover:text-[#D47125] text-sm font-[outfit] cursor-pointer">CONTACT</Link>
+                    <Link to='/' className="hover:text-[#D47125] text-sm font-[outfit] cursor-pointer">HOME</Link>
+                    <Link to='/shop' className="hover:text-[#D47125] text-sm font-[outfit] cursor-pointer">SHOP</Link>
+                    <Link to='/about-us' className="hover:text-[#D47125] text-sm font-[outfit] cursor-pointer">ABOUT US</Link>
+                    <Link to='/contact' className="hover:text-[#D47125] text-sm font-[outfit] cursor-pointer">CONTACT</Link>
                 </div>
 
                 {/* Icons & Hamburger */}
                 <div className="flex items-center space-x-4 md:space-x-6">
-                    <Link to={""}>
+                    <Link to=''>
                         <ShoppingCart className="hover:text-[#D47125]" />
                     </Link>
 
                     <div className='flex items-center gap-1'>
-                        <Link to={"/login"}>
+                        <Link to='/login'>
                             <UserRound className="hover:text-[#D47125]" />
                         </Link>
                         {/* <p className='font-bold text-[#D47125] text-lg uppercase'>{username}</p> */}
@@ -69,10 +69,10 @@ export default function Navbar() {
             {/* Mobile Menu */}
             {mobileMenuOpen && (
                 <div className="md:hidden bg-[#f7c6ab] px-6 py-4 space-y-4 flex flex-col">
-                    <Link to={"/"} className="hover:text-[#D47125] text-sm font-[outfit] cursor-pointer">HOME</Link>
-                    <Link to={"/about-us"} className="hover:text-[#D47125] text-sm font-[outfit] cursor-pointer">SHOP</Link>
-                    <Link to={"/contact"} className="hover:text-[#D47125] text-sm font-[outfit] cursor-pointer">ABOUT US</Link>
-                    <Link to={"/signup"} className="hover:text-[#D47125] text-sm font-[outfit] cursor-pointer">CONTACT</Link>
+                    <Link to='/' className="hover:text-[#D47125] text-sm font-[outfit] cursor-pointer">HOME</Link>
+                    <Link to='/shop' className="hover:text-[#D47125] text-sm font-[outfit] cursor-pointer">SHOP</Link>
+                    <Link to='/about-us' className="hover:text-[#D47125] text-sm font-[outfit] cursor-pointer">ABOUT US</Link>
+                    <Link to='/contact' className="hover:text-[#D47125] text-sm font-[outfit] cursor-pointer">CONTACT</Link>
                 </div>
             )}
         </nav>

@@ -4,10 +4,10 @@ import Video from '../assets/videos/hero-videoframe.png'
 
 const heroImages = [
     'https://i.pinimg.com/736x/e5/71/26/e57126e2be3020c316b559c5f87e3eed.jpg',
-    'https://i.pinimg.com/736x/4b/6b/ef/4b6bef64506abfbaebc644cf1b9d87ca.jpg',
+    'https://i.pinimg.com/736x/50/8d/98/508d9896e1c74ba6d0d6ff1aec2bb67a.jpg',
     'https://i.pinimg.com/736x/9d/44/75/9d4475b85e8945a1706036343b697b7e.jpg',
     'https://i.pinimg.com/736x/a7/e7/7f/a7e77f27cf57416428f44a51063a8c62.jpg',
-    'https://i.pinimg.com/736x/f6/29/c6/f629c64e450f5f87441db3e964581805.jpg',
+    'https://i.pinimg.com/1200x/43/2f/b9/432fb9c3ff458620c0f93a94c2e2daec.jpg',
 ];
 
 export default function HeroSlideshow() {
