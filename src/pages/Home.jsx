@@ -24,40 +24,52 @@ export default function Home() {
 
     const collections = [
         {
-            title: "HAIR",
-            subtitle: "Coconut & Hibiscus",
-            imageUrl: "https://assets.unileversolutions.com/v1/131029681.jpg?im=AspectCrop=(320,320);Resize=(320,320)",
-            link: "/collections/hair"
+            title: "Shea Butter",
+            subtitle: "Raw Shea Butter",
+            imageUrl: "https://i.pinimg.com/1200x/13/7a/d9/137ad976cebf333a24811156a87cc80e.jpg",
+            // link: "/collections/hair"
         },
         {
-            title: "BODY",
-            subtitle: "100% Virgin Coconut Oil",
-            imageUrl: "https://assets.unileversolutions.com/v1/131029660.jpg?im=AspectCrop=(320,320);Resize=(320,320)",
-            link: "/collections/body"
+            title: "Hair",
+            subtitle: "Hani-Lah Hair Food",
+            imageUrl: "https://i.pinimg.com/1200x/48/63/ea/4863eac83209960a3fd4f175f4289146.jpg",
+            // link: "/collections/body"
         },
         {
-            title: "MEN'S",
-            subtitle: "Maracuja & Shea Butter",
-            imageUrl: "https://assets.unileversolutions.com/v1/131029668.jpg?im=AspectCrop=(320,320);Resize=(320,320)",
-            link: "/collections/men"
+            title: "Pomade",
+            subtitle: "Hani-Lah Pomade",
+            imageUrl: "https://i.pinimg.com/736x/e4/fe/d3/e4fed3926245d9554c323bce437f5873.jpg",
+            // link: "/collections/men"
         },
         {
             title: "SKIN",
-            subtitle: "African Black Soap",
-            imageUrl: "https://assets.unileversolutions.com/v1/131029684.jpg?im=AspectCrop=(320,320);Resize=(320,320)",
-            link: "/collections/skin"
+            subtitle: "Hani-Lah Black Soap",
+            imageUrl: "https://i.pinimg.com/1200x/39/e0/6d/39e06da63bd22e57e1ff677221094942.jpg",
+            // link: "/collections/skin"
         },
         {
-            title: "BABY & KIDS",
-            subtitle: "Mango & Carrot Kids' Line",
-            imageUrl: "https://i.pinimg.com/736x/5e/9c/54/5e9c54326b4eca0655a43770dd8171d9.jpg",
-            link: "/collections/baby-kids"
+            title: "Skin",
+            subtitle: "Hani-Lah Baobab Soap",
+            imageUrl: "https://i.pinimg.com/1200x/a2/c5/83/a2c583ce1df62202e5cb6d78fb1407b7.jpg",
+            // link: "/collections/baby-kids"
         },
         {
-            title: "ACCESSORIES",
-            subtitle: "Hair Tools & More",
-            imageUrl: "https://i.pinimg.com/736x/ba/74/44/ba74445f5a20e2521febafb847d4d2c4.jpg",
-            link: "/collections/accessories"
+            title: "Skin",
+            subtitle: "Hani-Lah Neem Soap",
+            imageUrl: "https://i.pinimg.com/736x/ea/ae/56/eaae56d254ddcb212404632a360e319f.jpg",
+            // link: "/collections/accessories"
+        },
+        {
+            title: "Skin",
+            subtitle: "Hani-Lah Shea Soap",
+            imageUrl: "https://i.pinimg.com/1200x/42/2d/ba/422dbaeb623f38d6387844131f024df5.jpg",
+            // link: "/collections/accessories"
+        },
+        {
+            title: "Skin",
+            subtitle: "Hani-Lah Moringa Soap",
+            imageUrl: "https://i.pinimg.com/736x/3d/85/07/3d85076d66dcdca8404c009da33ceb91.jpg",
+            // link: "/collections/accessories"
         },
     ];
 
@@ -127,14 +139,13 @@ export default function Home() {
                         Enterprise
                     </h2>
                     <p className="text-xl text-white mb-10 max-w-3xl mx-auto leading-relaxed">
-                        We produce shea butter, shea pomade, hair food, black soap, baobab & moringa soaps, and lip balm — delivering nationwide.
+                        We produce shea butter, shea pomade, hair food, black soap, baobab, neem & moringa soaps, and lip balm — delivering nationwide.
                     </p>
-                    <a
-                        href="#shop"
+                        <Link to="/shop"
                         className="bg-[#2A1103] border-2 border-[#2A1103] text-sm shadow-lg text-white px-8 py-3 transition-all duration-300 ease-in-out hover:bg-transparent hover:border-[#2A1103] hover:text-white"
                     >
                         Shop Now
-                    </a>
+                    </Link>
                 </div>
             </section>
 
@@ -249,7 +260,7 @@ export default function Home() {
 
                 {/* Content on the right side */}
                 <div className="relative z-20 flex justify-end items-center w-full px-4 sm:px-6 lg:px-8 h-full mb-40">
-                    <div className="text-left max-w-lg md:ml-auto md:w-1/2 p-4 md:p-8 bg-white md:bg-transparent rounded-lg md:rounded-none">
+                    <div className="text-left max-w-lg md:ml-auto md:w-1/2 p-4 md:p-8 mt-25 lg:mt-2 bg-white md:bg-transparent rounded-lg md:rounded-none">
                         <h2 className="text-2xl md:text-3xl lg:text-4xl font-[display] text-[#2A1103] mb-6 leading-tight">
                             Ready to Experience Hani-Lah Products? {/* Changed color for highlight */}
                         </h2>
@@ -257,9 +268,9 @@ export default function Home() {
                             Experience the difference that natural skincare can make by shopping Hani-lah Shea products today. With convenient online ordering and prompt delivery, it's never been easier to treat your skin to the goodness it deserves.
                         </p>
                         <div className="flex flex-col font-[outfit] sm:flex-row gap-4 justify-start"> {/* Align buttons to start */}
-                            <button className="bg-[#2A1103] border-2 border-[#2A1103] hover:bg-transparent hover:border-[#2A1103] hover:text-[#2A1103] text-white py-3 w-[30%] text-sm shadow-lg">
+                            <Link to="/shop"><button className="bg-[#2A1103] border-2 border-[#2A1103] hover:bg-transparent hover:border-[#2A1103] hover:text-[#2A1103] text-white py-3 px-6 text-sm shadow-lg">
                                 SHOP
-                            </button>
+                            </button></Link>
                             <Link to="/contact">
                                 <button className="bg-transparent border-2 border-[#2A1103] text-[#2A1103] hover:bg-gray-100 hover:border-[#2A1103] py-3 px-8 text-sm shadow-lg transition-colors duration-300">
                                     CONTACT

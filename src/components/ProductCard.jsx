@@ -19,7 +19,8 @@ export default function ProductCard({ badge, image, name, description, rating, p
       <div className="flex justify-between items-center mt-auto">
         {/* <span className="text-gray-900 font-bold">$90</span> */}
         <button className="bg-[#2A1103] text-white text-xs font-[outfit] px-10 py-2 w-[90%] 
-         hover:bg-gray-800 transition">ADD TO CART - $90
+         hover:bg-transparent transition border-2 border-[#2A1103 hover:border-[#2A1103] hover:text-[#2A1103] shadow-lg">
+          ADD TO CART - ₵90
 
         </button>
       </div>

@@ -10,7 +10,7 @@ export default function Contact() {
                 <div className="max-w-6xl mx-auto text-[#2A1103] px-4 py-12 mt-15">
                     <h2 className="text-3xl font-bold font-[display] text-center mb-4">Get in Touch</h2>
                     <p className="text-center mb-10 font-[outfit]">
-                        We're here to help you with all your property needs. Reach out to us through any of the channels below.
+                        We're here to help you with all your cosmetic needs. Reach out to us through any of the channels below.
                     </p>
 
                     <form className="grid md:grid-cols-2 gap-6 bg-gray-100 text-[#2A1103] p-10 shadow">
@@ -31,15 +31,15 @@ export default function Contact() {
                     <div className="gap-6 mt-12">
                         <div className='bg-[#2A1103] text-white p-6 shadow'>
                             <h4 className="text-2xl font-[display] mb-2">Contact Information</h4>
-                            <p className="font-[outfit]"><strong>Office:</strong> 123 Business District, Suite 456, NY 10001</p>
-                            <p className="font-[outfit]"><strong>Phone:</strong> +1 (555) 123-4567</p>
-                            <p className="font-[outfit]"><strong>Email:</strong> info@propertyhub.com</p>
+                            <p className="font-[outfit]"><strong>Location:</strong> 123 Northern Region, Tamale</p>
+                            <p className="font-[outfit]"><strong>Phone:</strong> +233 (546) 394-370</p>
+                            <p className="font-[outfit]"><strong>Email:</strong> abdulwahabhanifa2@gmail.com</p>
                         </div>
 
-                        <div>
+                        <div>  
                             <h4 className="text-2xl font-[display] mb-6 mt-10">Quick Contact</h4>
                             <button className="w-full bg-[#331402] text-white py-2 mb-2">Chat on WhatsApp</button>
-                            <button className="w-full bg-[#2A1103] text-white py-2 mb-2">Live Chat Support</button>
+                            {/* <button className="w-full bg-[#2A1103] text-white py-2 mb-2">Live Chat Support</button> */}
                         </div>
 
                         <div className="text-[#2A1103]">

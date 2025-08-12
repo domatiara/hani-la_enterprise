@@ -25,11 +25,10 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-white font-[outfit] mb-4">Shop</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-white font-[outfit] hover:text-[#D47125] transition-colors">Serums</a></li>
-              <li><a href="#" className="text-white font-[outfit] hover:text-[#D47125] transition-colors">Cleansers</a></li>
-              <li><a href="#" className="text-white font-[outfit] hover:text-[#D47125] transition-colors">Moisturizers</a></li>
-              <li><a href="#" className="text-white font-[outfit] hover:text-[#D47125] transition-colors">Treatments</a></li>
-              <li><a href="#" className="text-white font-[outfit] hover:text-[#D47125] transition-colors">Gift Sets</a></li>
+              <li><a href="#" className="text-white font-[outfit] hover:text-[#D47125] transition-colors">Raw Shea Butter</a></li>
+              <li><a href="#" className="text-white font-[outfit] hover:text-[#D47125] transition-colors">Soaps</a></li>
+              <li><a href="#" className="text-white font-[outfit] hover:text-[#D47125] transition-colors">Hair Food</a></li>
+              <li><a href="#" className="text-white font-[outfit] hover:text-[#D47125] transition-colors">Pomade</a></li>
             </ul>
           </div>
 
@@ -39,7 +38,6 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><a href="#" className="text-white font-[outfit] hover:text-[#D47125] transition-colors">Contact Us</a></li>
               <li><a href="#" className="text-white font-[outfit] hover:text-[#D47125] transition-colors">Shipping & Returns</a></li>
-              <li><a href="#" className="text-white font-[outfit] hover:text-[#D47125] transition-colors">Size Guide</a></li>
               <li><a href="#" className="text-white font-[outfit] hover:text-[#D47125] transition-colors">FAQ</a></li>
               <li><a href="#" className="text-white font-[outfit] hover:text-[#D47125] transition-colors">Reviews</a></li>
             </ul>
@@ -52,7 +50,6 @@ export default function Footer() {
               <li><a href="#" className="text-white font-[outfit] hover:text-[#D47125] transition-colors">About Us</a></li>
               <li><a href="#" className="text-white font-[outfit] hover:text-[#D47125] transition-colors">Our Story</a></li>
               <li><a href="#" className="text-white font-[outfit] hover:text-[#D47125] transition-colors">Ingredients</a></li>
-              <li><a href="#" className="text-white font-[outfit] hover:text-[#D47125] transition-colors">Sustainability</a></li>
               <li><a href="#" className="text-white font-[outfit] hover:text-[#D47125] transition-colors">Careers</a></li>
             </ul>
           </div>

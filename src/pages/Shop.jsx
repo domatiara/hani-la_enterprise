@@ -16,7 +16,7 @@ export default function Shop() {
                 <div className="absolute inset-0 bg-black/75 z-10 "></div>
                 <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                        About Hani-Lah
+                  Hani-Lah Shea Products
                     </h1>
                     <p className="text-xl text-white mb-8 max-w-3xl mx-auto leading-relaxed">
                         Embrace the Beauty of Shea Butter. <br />
@@ -26,7 +26,7 @@ export default function Shop() {
                         Shop Hani-lah Shea Products today!
                     </p>
                 </div>
-            </section>
+            </section>  
 
             <div className="text-center px-4 sm:px-8 md:px-12 lg:px-20"></div>
             <h1 className="text-3xl text-[#2A1103] sm:text-4xl md:text-5xl lg:text-6xl text-center font-bold mt-8 mb-4">Best sellers</h1>
