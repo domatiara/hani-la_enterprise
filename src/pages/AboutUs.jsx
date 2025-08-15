@@ -3,6 +3,8 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import About from "../assets/videos/About.mp4"
 import { Link } from "react-router";
+import Shea from "../assets/images/shea-group.jpg";
+import AboutImg from "../assets/images/about-img.jpeg";
 
 
 
@@ -16,7 +18,7 @@ export default function AboutUs() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div className="relative">
                             <img
-                                src="https://i.pinimg.com/1200x/2e/32/29/2e32296edefd4526207e512b2c484bde.jpg"
+                                src={AboutImg}
                                 alt="Shea butter"
                                 className="rounded-xl shadow-2xl"
                             />
@@ -66,8 +68,8 @@ export default function AboutUs() {
                         </div>
                         <div className="relative">
                             <img
-                                src="https://i.pinimg.com/736x/83/cf/11/83cf11f46bb94371fd79f369a6d7da63.jpg"
-                                alt="Handmade soap"
+                                src={Shea}
+                                alt="Shea Products"
                                 className="rounded-xl shadow-2xl"
                             />
                         </div>

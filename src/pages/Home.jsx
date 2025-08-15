@@ -7,70 +7,65 @@ import HomeVideo from "../assets/videos/Home.mp4";
 import { Link } from "react-router"; // Ensure this import is correct for your react-router version
 import React, { useRef } from 'react'; // Import useRef for scrolling
 import { Leaf, Shield, Award, Heart } from 'lucide-react';
+import sb from "../assets/images/raw-shea.jpg";
+import hc from "../assets/images/hair-cream-f.jpg";
+import bc from "../assets/images/body-cream-f.jpg";
+import bs from "../assets/images/black-soap.jpg";
 
 export default function Home() {
-    const products = [
-        {
-            name: "Chebula Active Serum",
-            badge: "Bestseller",
-            image: "/images/chebula.jpg",
-            description: "Clinically proven to outperform two leading anti-aging serums.",
-            rating: 5,
-            price: 90,
-            buttonLabel: "ADD TO BAG - $90",
-        },
-        // Add more product objects as needed
-    ];
+
+    
+   
 
     const collections = [
         {
             title: "Shea Butter",
             subtitle: "Raw Shea Butter",
-            imageUrl: "https://i.pinimg.com/1200x/13/7a/d9/137ad976cebf333a24811156a87cc80e.jpg",
-            // link: "/collections/hair"
+            image: sb,
+            link: "/shop"
         },
         {
             title: "Hair",
-            subtitle: "Hani-Lah Hair Food",
-            imageUrl: "https://i.pinimg.com/1200x/48/63/ea/4863eac83209960a3fd4f175f4289146.jpg",
-            // link: "/collections/body"
-        },
-        {
-            title: "Pomade",
-            subtitle: "Hani-Lah Pomade",
-            imageUrl: "https://i.pinimg.com/736x/e4/fe/d3/e4fed3926245d9554c323bce437f5873.jpg",
-            // link: "/collections/men"
+            subtitle: "Hani-lah Hair Glow",
+            image: hc,
+            link: "/shop"
         },
         {
             title: "SKIN",
-            subtitle: "Hani-Lah Black Soap",
-            imageUrl: "https://i.pinimg.com/1200x/39/e0/6d/39e06da63bd22e57e1ff677221094942.jpg",
-            // link: "/collections/skin"
+            subtitle: "Hani-Lah Soap",
+            image: bs,
+            link: "/shop"
         },
         {
             title: "Skin",
-            subtitle: "Hani-Lah Baobab Soap",
-            imageUrl: "https://i.pinimg.com/1200x/a2/c5/83/a2c583ce1df62202e5cb6d78fb1407b7.jpg",
+            subtitle: "Hani-lah Skin Glow",
+            image: bc,
+            link: "/shop"
+        },
+        // {
+        //     title: "Skin",
+        //     subtitle: "Hani-Lah Baobab Soap",
+        //     imageUrl: "https://i.pinimg.com/1200x/a2/c5/83/a2c583ce1df62202e5cb6d78fb1407b7.jpg",
             // link: "/collections/baby-kids"
-        },
-        {
-            title: "Skin",
-            subtitle: "Hani-Lah Neem Soap",
-            imageUrl: "https://i.pinimg.com/736x/ea/ae/56/eaae56d254ddcb212404632a360e319f.jpg",
+        // },
+        // {
+        //     title: "Skin",
+        //     subtitle: "Hani-Lah Neem Soap",
+        //     imageUrl: "https://i.pinimg.com/736x/ea/ae/56/eaae56d254ddcb212404632a360e319f.jpg",
             // link: "/collections/accessories"
-        },
-        {
-            title: "Skin",
-            subtitle: "Hani-Lah Shea Soap",
-            imageUrl: "https://i.pinimg.com/1200x/42/2d/ba/422dbaeb623f38d6387844131f024df5.jpg",
+        // },
+        // {
+        //     title: "Skin",
+        //     subtitle: "Hani-Lah Shea Soap",
+        //     imageUrl: "https://i.pinimg.com/1200x/42/2d/ba/422dbaeb623f38d6387844131f024df5.jpg",
+        //     // link: "/collections/accessories"
+        // },
+        // {
+        //     title: "Skin",
+        //     subtitle: "Hani-Lah Moringa Soap",
+        //     imageUrl: "https://i.pinimg.com/736x/3d/85/07/3d85076d66dcdca8404c009da33ceb91.jpg",
             // link: "/collections/accessories"
-        },
-        {
-            title: "Skin",
-            subtitle: "Hani-Lah Moringa Soap",
-            imageUrl: "https://i.pinimg.com/736x/3d/85/07/3d85076d66dcdca8404c009da33ceb91.jpg",
-            // link: "/collections/accessories"
-        },
+        // },
     ];
 
     // Ref for the scrollable container
@@ -181,7 +176,7 @@ export default function Home() {
                                     <CollectionCard
                                         title={collection.title}
                                         subtitle={collection.subtitle}
-                                        imageUrl={collection.imageUrl}
+                                        imageUrl={collection.image}
                                     />
                                 </div>
                             ))}
