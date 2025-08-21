@@ -30,7 +30,7 @@ export default function Navbar() {
       <div className="bg-[#EDEDED]">
         <div className="text-black flex flex-col sm:flex-row justify-center items-center p-1.5 text-xs space-y-2 sm:space-y-0 sm:space-x-8">
           <p className="text-center">
-            Get a <span className='text-[#2A1103] font-bold'>Renew Shea Butter Products</span> with your first purchase! Offer available in cart.
+            Hani-Lah Enterprise crafts high-quality <span className='text-[#2A1103] font-bold'>shea products</span> through value addition, ensuring our customers enjoy natural, effective, and sustainable solutions.
             <span className="text-[#2A1103] font-bold"> Shop Now!</span>
           </p>
         </div>

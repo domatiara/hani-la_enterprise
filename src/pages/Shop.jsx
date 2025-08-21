@@ -43,11 +43,12 @@ const AllProducts = () => {
     
     toast.success(`${product.name} added to cart`, {
       style: {
-        borderRadius: "8px",
-        background: "#fff",
-        color: "#2A1103",
+        // borderRadius: "8px",
+        background: "#2A1103",
+        color: "white",
         fontWeight: "500",
         boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+        fontFamily: "Outfit"
       },
       position: "top-center",
       autoClose: 3000,

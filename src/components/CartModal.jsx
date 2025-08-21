@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { CartContext } from "../Content/cart";
 import { FaTimes, FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router"; // Use react-router-dom for proper Link
-// Use react-toastify consistently instead of react-hot-toast
 import { toast } from "react-toastify";
 import { Phone, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import PaymentForm from './PaymentForm'; // Import the new PaymentForm component
 
 // Helper component for a single cart item, making the main modal cleaner
 const CartItem = ({ item, onRemove }) => (
@@ -46,26 +46,36 @@ const CartItem = ({ item, onRemove }) => (
 );
 
 const CartModal = ({ isOpen, onClose }) => {
-  // CORRECTED: Destructuring `items` and `removeItem` from the context
+  // Destructuring 'items' and 'removeItem' from the context
   const { items, removeItem } = useContext(CartContext);
+  // New state to toggle between the cart view and the payment form
+  const [showPaymentForm, setShowPaymentForm] = useState(false);
 
-  // Use `items` here instead of `cartItems`
+  // Calculate the subtotal from the cart items
   const subtotal = items && Array.isArray(items)
     ? items.reduce((acc, item) => acc + item.price * item.quantity, 0)
     : 0;
 
-  const handleCheckoutClick = () => {
-    // The toast function call is updated to use react-toastify's API
-    toast("Complete your order via WhatsApp or phone", {
-      position: "bottom-center",
-      style: {
-        background: "#1b5059",
-        color: "white",
-        borderRadius: "12px",
-        fontFamily: "Montserrat",
-      },
-      icon: "�",
-    });
+  // Handler for the "Proceed to Checkout" button
+  const handleProceedToPayment = () => {
+    if (items.length === 0) {
+      toast.error("Your cart is empty!", { position: "bottom-center" });
+      return;
+    }
+    setShowPaymentForm(true); // Switch to the payment form view
+  };
+
+  // Handler for successful payment, closes the modal and resets the view
+  const handlePaymentSuccess = () => {
+    // You might want to clear the cart here, depending on your app's logic
+    // clearCart();
+    onClose();
+    setShowPaymentForm(false);
+  };
+
+  // Handler for when the payment modal is closed without success
+  const handlePaymentClose = () => {
+    setShowPaymentForm(false);
   };
 
   return (
@@ -91,7 +101,9 @@ const CartModal = ({ isOpen, onClose }) => {
           >
             {/* Header */}
             <div className="px-5 py-4 border-b border-gray-100 flex justify-between items-center sticky top-0 bg-white z-10">
-              <h2 className="text-xl font-semibold font-[outfit] text-[#2A1103]">Your Cart</h2>
+              <h2 className="text-xl font-semibold font-[outfit] text-[#2A1103]">
+                {showPaymentForm ? "Payment" : "Your Cart"}
+              </h2>
               <button
                 onClick={onClose}
                 className="p-2 rounded-full hover:bg-[#e2ab8b] transition"
@@ -103,55 +115,78 @@ const CartModal = ({ isOpen, onClose }) => {
 
             {/* Content */}
             <div className="flex-1 overflow-y-auto">
-              {/* Use `items` here */}
-              {items && items.length === 0 ? (
-                <div className="flex flex-col items-center justify-center h-full p-6 text-center">
-                  <div className="w-20 h-20 bg-[#bb7d59] rounded-full flex items-center justify-center mb-4">
-                    <svg
-                      className="w-10 h-10 text-[#2A1103]"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg font-medium font-[outfit] text-[#2A1103] mb-2">
-                    Your cart is empty
-                  </h3>
-                  <p className="text-[#2A1103] font-[display] mb-6">
-                    Browse our collection to get started
-                  </p>
-                  <Link
-                    to="/shop"
-                    onClick={onClose}
-                    className=" px-5 py-2.5 font-[outfit] font-medium transitionn bg-[#2A1103] border-2 border-[#2A1103] text-sm shadow-lg text-white transition-all duration-300 ease-in-out hover:bg-transparent hover:border-[#2A1103] hover:text-[#2A1103]"
+              <AnimatePresence mode="wait">
+                {showPaymentForm ? (
+                  <motion.div
+                    key="payment-form"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.3 }}
                   >
-                    Shop Products
-                  </Link>
-                </div>
-              ) : (
-                <motion.div layout className="divide-y divide-gray-100">
-                  {/* Use `items` here and `removeItem` */}
-                  {items && items.map((item) => (
-                    <CartItem
-                      key={item.id}
-                      item={item}
-                      onRemove={removeItem}
+                    <PaymentForm
+                      amount={subtotal}
+                      onPaymentSuccess={handlePaymentSuccess}
+                      onPaymentClose={handlePaymentClose}
                     />
-                  ))}
-                </motion.div>
-              )}
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="cart-items"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {items && items.length === 0 ? (
+                      <div className="flex flex-col items-center justify-center h-full p-6 text-center">
+                        <div className="w-20 h-20 bg-[#bb7d59] rounded-full flex items-center justify-center mb-4">
+                          <svg
+                            className="w-10 h-10 text-[#2A1103]"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={1.5}
+                              d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                            />
+                          </svg>
+                        </div>
+                        <h3 className="text-lg font-medium font-[outfit] text-[#2A1103] mb-2">
+                          Your cart is empty
+                        </h3>
+                        <p className="text-[#2A1103] font-[display] mb-6">
+                          Browse our collection to get started
+                        </p>
+                        <Link
+                          to="/shop"
+                          onClick={onClose}
+                          className=" px-5 py-2.5 font-[outfit] font-medium transitionn bg-[#2A1103] border-2 border-[#2A1103] text-sm shadow-lg text-white transition-all duration-300 ease-in-out hover:bg-transparent hover:border-[#2A1103] hover:text-[#2A1103]"
+                        >
+                          Shop Products
+                        </Link>
+                      </div>
+                    ) : (
+                      <motion.div layout className="divide-y divide-gray-100">
+                        {items && items.map((item) => (
+                          <CartItem
+                            key={item.id}
+                            item={item}
+                            onRemove={removeItem}
+                          />
+                        ))}
+                      </motion.div>
+                    )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             {/* Footer */}
-            {/* Use `items` here */}
-            {items && items.length > 0 && (
+            {items && items.length > 0 && !showPaymentForm && (
               <div className="border-t border-gray-100 p-5 bg-white sticky bottom-0">
                 <div className="flex justify-between items-center mb-5">
                   <span className="font-medium font-[outfit] text-[#2A1103]">Subtotal</span>
@@ -162,22 +197,21 @@ const CartModal = ({ isOpen, onClose }) => {
 
                 <div className="space-y-3">
                   <button
-                    onClick={handleCheckoutClick}
+                    onClick={handleProceedToPayment}
                     className="w-full py-3 font-medium bg-[#2A1103] border-2 border-[#2A1103] text-sm shadow-lg text-white transition-all duration-300 ease-in-out hover:bg-transparent hover:border-[#2A1103] hover:text-[#2A1103]"
                   >
                     Proceed to Checkout
                   </button>
-
                   <div className="grid grid-cols-2 gap-3">
                     <a
-                      href="tel:+233540435713"
+                      href="tel:+233546394370"
                       className="flex items-center justify-center gap-2 py-2.5 font-medium bg-[#2A1103] border-2 border-[#2A1103] text-sm shadow-lg text-white transition-all duration-300 ease-in-out hover:bg-transparent hover:border-[#2A1103] hover:text-[#2A1103]"
                     >
                       <Phone className="w-4 h-4" />
                       Call
                     </a>
                     <a
-                      href="https://wa.me/233540435713?text=Hi Hani-Lah Enterprise, I want to order from my cart"
+                      href={`https://wa.me/233546394370?text=Hi Hani-Lah Enterprise, I want to order the following:%0A%0A${encodeURIComponent(items.map(item => `- ${item.name} (${item.size}): GH₵ ${item.price.toFixed(2)} x ${item.quantity}`).join('\n'))}%0A%0ATotal: GH₵ ${subtotal.toFixed(2)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2 py-2.5 font-medium bg-[#2A1103] border-2 border-[#2A1103] text-sm shadow-lg text-white transition-all duration-300 ease-in-out hover:bg-transparent hover:border-[#2A1103] hover:text-[#2A1103]"
@@ -186,7 +220,6 @@ const CartModal = ({ isOpen, onClose }) => {
                       WhatsApp
                     </a>
                   </div>
-
                   <Link
                     to="/shop"
                     onClick={onClose}
@@ -196,6 +229,17 @@ const CartModal = ({ isOpen, onClose }) => {
                   </Link>
                 </div>
               </div>
+            )}
+            {/* "Back to Cart" button for payment form view */}
+            {showPaymentForm && (
+                <div className="p-5 bg-white border-t border-gray-100 flex justify-center">
+                    <button
+                        onClick={() => setShowPaymentForm(false)}
+                        className="py-2.5 px-5 font-medium bg-[#2A1103] border-2 border-[#2A1103] text-sm shadow-lg text-white transition-all duration-300 ease-in-out hover:bg-transparent hover:border-[#2A1103] hover:text-[#2A1103]"
+                    >
+                        Back to Cart
+                    </button>
+                </div>
             )}
           </motion.div>
         </>
