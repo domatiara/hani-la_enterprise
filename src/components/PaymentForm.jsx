@@ -29,7 +29,7 @@ const PaymentForm = ({ amount, onPaymentSuccess, onPaymentClose }) => {
     // Check if the Paystack script is loaded
     if (window.PaystackPop) {
       // It's crucial to replace this public key with your actual one
-      const publicKey = 'pk_test_a9000b0f796d13d7110191599540b7d76241a8a2';
+      const publicKey = 'pk_test_a4e8e8dbcab69e9103d008e59ca7d780d61b2eaf';
 
       const handler = window.PaystackPop.setup({
         key: publicKey,
@@ -43,14 +43,32 @@ const PaymentForm = ({ amount, onPaymentSuccess, onPaymentClose }) => {
         },
         callback: (response) => {
           // This function is called on a successful payment
-          toast.success('Payment was successful! Reference: ' + response.reference, { position: "bottom-center" });
+          toast.success('Payment was successful! Reference: ' + response.reference, {
+            position: "bottom-center",
+            style: {
+              background: "#2A1103",
+              color: "white",
+              fontWeight: "500",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+              fontFamily: "Outfit"
+            }
+          });
           if (onPaymentSuccess) {
             onPaymentSuccess(); // Call the success handler passed as a prop
           }
         },
         onClose: () => {
           // This function is called if the user closes the payment widget
-          toast.info('Payment widget closed.', { position: "bottom-center" });
+          toast.info('Are you sure you want to close?', {
+            position: "bottom-center",
+            style: {
+              background: "#2A1103",
+              color: "white",
+              fontWeight: "500",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+              fontFamily: "Outfit"
+            }
+          });
           if (onPaymentClose) {
             onPaymentClose(); // Call the close handler passed as a prop
           }
@@ -73,7 +91,7 @@ const PaymentForm = ({ amount, onPaymentSuccess, onPaymentClose }) => {
             id="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="mt-1 block w-full px-3 py-2 border border-[#2A1103]  shadow-sm focus:outline-none focus:ring-[#ec8733] focus:border-[#ec8733] sm:text-sm"
+            className="mt-1 block w-full px-3 py-2 border border-[#2A1103] shadow-sm focus:outline-none focus:ring-[#ec8733] focus:border-[#ec8733] sm:text-sm"
             required
           />
         </div>

@@ -134,7 +134,7 @@ export default function Home() {
                         Enterprise
                     </h2>
                     <p className="text-xl text-white mb-10 max-w-3xl mx-auto leading-relaxed">
-                        We produce shea butter, shea pomade, hair food, black soap, baobab, neem & moringa soaps, and lip balm — delivering nationwide.
+                        We produce shea butter, shea pomade, hair food, black soap, baobab & moringa soaps, and lip balm — delivering nationwide.
                     </p>
                         <Link to="/shop"
                         className="bg-[#2A1103] border-2 border-[#2A1103] text-sm shadow-lg text-white px-8 py-3 transition-all duration-300 ease-in-out hover:bg-transparent hover:border-[#2A1103] hover:text-white"

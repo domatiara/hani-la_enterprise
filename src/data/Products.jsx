@@ -5,7 +5,7 @@ import bas from "../assets/images/baobab-soap.jpg";
 import sb from "../assets/images/raw-shea.jpg";
 import bc from "../assets/images/body-cream-f.jpg";
 import ss from "../assets/images/shea-soap.jpg";
-
+import rsb from "../assets/images/raw-shea-b.jpg";
 
 
 const products = [
@@ -69,20 +69,20 @@ const products = [
     id: 7,
     name: "Hani-lah Raw Shea Butter",
     description: "100% pure and unrefined shea butter to deeply moisturize, heal, and protect skin and hair naturally.",
-    price: 60.00,
+    price: 80.00,
     image: sb,
-    category: "",
+    category: "Raw Shea Butter",
     size: "1kg",
   },
-  // {
-  //   id: 8,
-  //   name: "Shea Butter Baby Cream",
-  //   description: "Gentle cream for babies' sensitive skin, fragrance-free.",
-  //   price: 30.00,
-  //   image: p2,
-  //   category: "Soap",
-  //   size: "100ml",
-  // },
+  {
+    id: 8,
+    name: "Hani-lah Raw Shea Butter",
+    description: "100% pure and unrefined shea butter to deeply moisturize, heal, and protect skin and hair naturally.",
+    price: 60.00,
+    image: rsb,
+    category: "Raw Shea Butter",
+    size: "1kg",
+  },
   // {
   //   id: 9,
   //   name: "Shea Butter Beard Balm",
