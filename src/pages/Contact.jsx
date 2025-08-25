@@ -49,7 +49,7 @@ export default function Contact() {
     const contactInfo = [
         { icon: <PhoneIcon />, title: "Call Us", details: ["+233 (546) 394-370"], link: "tel:+233546394370" },
         { icon: <MailIcon />, title: "Email Us", details: ["abdulwahabhanifa2@gmail.com"], link: "mailto:abdulwahabhanifa2@gmail.com" },
-        { icon: <LocationIcon />, title: "Visit Us", details: ["123 Northern Region, Tamale"], link: "#" },
+        { icon: <LocationIcon />, title: "Visit Us", details: ["Sinai Street, Kalpohin, Tamale"], link: "#" },
         { icon: <ClockIcon />, title: "Business Hours", details: ["Mon - Fri: 9:00 AM - 6:00 PM", "Saturday: 10:00 AM - 4:00 PM", "Sunday: Closed"], link: null }
     ];
 

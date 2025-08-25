@@ -242,28 +242,28 @@ export default function Home() {
             </section>
             {/* MODIFIED: READY TO EXPERIENCE HANI-LAH PRODUCTS SECTION - Image Background with Text on Right */}
             <section
-                className="relative py-20 overflow-hidden flex items-center justify-center mt-20 h-[500px] md:h-[600px] lg:h-[700px]" // Adjusted height
+                className="relative py-20 sm:py-[80px] overflow-hidden flex items-center justify-center mt-20 h-[500px] sm:h-[640px] md:h-[600px] lg:h-[700px]" // Adjusted height
             >
                 {/* Image on the left side */}
                 <div
-                    className="absolute inset-y-0 left-0 h-[70%] w-full lg:w-full md:w-1/2 bg-cover bg-center"
-                    style={{ backgroundImage: 'url("https://truebotanicals.com/cdn/shop/files/Homepage_Skincare_Quiz_1.jpg?v=1745607154&width=960")' }}
+                    className="absolute inset-y-0 left-0 h-[85%] w-full lg:w-full md:w-1/2  bg-center"
+                    style={{ backgroundImage: 'url("https://i.pinimg.com/1200x/1a/12/31/1a12315ef8c883a5def5826810c789a6.jpg")' }}
                 >
                     {/* Optional: Overlay on the image if needed for contrast */}
                     {/* <div className="absolute inset-0 bg-black opacity-10"></div> */}
                 </div>
 
                 {/* Content on the right side */}
-                <div className="relative z-20 flex justify-end items-center w-full px-4 sm:px-6 lg:px-8 h-full mb-40">
+                {/* <div className="relative z-20 flex items-center w-full px-4 sm:px-6 lg:px-8 h-full mb-40">
                     <div className="text-left max-w-lg md:ml-auto md:w-1/2 p-4 md:p-8 mt-25 lg:mt-2 bg-white md:bg-transparent rounded-lg md:rounded-none">
                         <h2 className="text-2xl md:text-3xl lg:text-4xl font-[display] text-[#2A1103] mb-6 leading-tight">
                             Ready to Experience Hani-Lah Products? {/* Changed color for highlight */}
-                        </h2>
-                        <p className="text-xl text-[#2A1103] font-[outfit] mb-10 leading-relaxed">
+                        {/* </h2> */} 
+                        {/* <p className="text-xl text-[#2A1103] font-[outfit] mb-10 leading-relaxed">
                             Experience the difference that natural skincare can make by shopping Hani-lah Shea products today. With convenient online ordering and prompt delivery, it's never been easier to treat your skin to the goodness it deserves.
-                        </p>
-                        <div className="flex flex-col font-[outfit] sm:flex-row gap-4 justify-start"> {/* Align buttons to start */}
-                            <Link to="/shop"><button className="bg-[#2A1103] border-2 border-[#2A1103] hover:bg-transparent hover:border-[#2A1103] hover:text-[#2A1103] text-white py-3 px-6 text-sm shadow-lg">
+                        </p> */}
+                        {/* <div className="flex flex-col font-[outfit] sm:flex-row gap-4 justify-start"> Align buttons to start */}
+                            {/* <Link to="/shop"><button className="bg-[#2A1103] border-2 border-[#2A1103] hover:bg-transparent hover:border-[#2A1103] hover:text-[#2A1103] text-white py-3 px-6 text-sm shadow-lg">
                                 SHOP
                             </button></Link>
                             <Link to="/contact">
@@ -273,7 +273,29 @@ export default function Home() {
                             </Link>
                         </div>
                     </div>
-                </div>
+                </div> */}
+
+                 {/* Content centered on top of the image */}
+                <div className="relative z-20 text-center font-[outfit] max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 mb-40">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl sm:text-2xl font-[display] text-white mb-6 leading-tight mt-20">
+                        Ready to Experience Hani-Lah Products?
+                    </h2>
+                    <p className="text-xl text-white font-[outfit] mb-10 leading-relaxed">
+                        Experience the difference that natural skincare can make by shopping Hani-lah Shea products today. With convenient online ordering and prompt delivery, it's never been easier to treat your skin to the goodness it deserves.
+                    </p>
+                    <div className="flex lg:flex-row sm:flex-row gap-4 justify-center mb-5">
+                        <Link to="/shop">
+                            <button className="bg-[#2A1103] border-2 border-[#2A1103] hover:bg-transparent hover:border-[#2A1103] hover:text-[#2A1103] text-white py-3 px-6 text-sm shadow-lg">
+                                SHOP
+                            </button>
+                        </Link>
+                        <Link to="/contact">
+                            <button className="bg-transparent border-2 border-[#2A1103] text-[#2A1103] hover:bg-gray-100 hover:border-[#2A1103] py-3 px-8 text-sm shadow-lg transition-colors duration-300">
+                                CONTACT
+                            </button>
+                        </Link>
+                    </div>
+                    </div>
             </section>
 
 
@@ -284,7 +306,7 @@ export default function Home() {
                         Join 50,000+ Happy Customers
                     </h3>
                     <p className="text-[#2A1103] font-[outfit] text-lg mb-8">
-                        Experience the difference that pure, science-backed botanicals can make for your skin.
+                        Experience the difference that pure, natural Shea-based botanicals from Hani-Lah can make for your skin.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <div className="flex items-center text-[#2A1103] justify-center space-x-1 ">

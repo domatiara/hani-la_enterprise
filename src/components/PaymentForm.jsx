@@ -29,7 +29,7 @@ const PaymentForm = ({ amount, onPaymentSuccess, onPaymentClose }) => {
     // Check if the Paystack script is loaded
     if (window.PaystackPop) {
       // It's crucial to replace this public key with your actual one
-      const publicKey = 'pk_test_a4e8e8dbcab69e9103d008e59ca7d780d61b2eaf';
+      const publicKey = 'pk_live_e4054f9b8719b3ea679749dd95fa28df4f7ea6ed';
 
       const handler = window.PaystackPop.setup({
         key: publicKey,
@@ -51,6 +51,7 @@ const PaymentForm = ({ amount, onPaymentSuccess, onPaymentClose }) => {
               fontWeight: "500",
               boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
               fontFamily: "Outfit"
+              
             }
           });
           if (onPaymentSuccess) {
