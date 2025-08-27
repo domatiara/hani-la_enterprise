@@ -18,7 +18,7 @@ const CollectionCard = ({ title, subtitle, imageUrl }) => {
         </p>
       </div>
       {/* Optional: A link/button overlay for clickability, similar to the image's example */}
-      <a href="#" className="absolute inset-0 z-10" aria-label={`View ${title} collection`}></a>
+      <a href="/shop" className="absolute inset-0 z-10" aria-label={`View ${title} collection`}></a>
     </div>
   );
 };
