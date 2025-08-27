@@ -1,5 +1,6 @@
 // src/components/CollectionCard.jsx
 import React from 'react';
+import { Link } from 'react-router';
 
 const CollectionCard = ({ title, subtitle, imageUrl }) => {
   return (
@@ -18,7 +19,7 @@ const CollectionCard = ({ title, subtitle, imageUrl }) => {
         </p>
       </div>
       {/* Optional: A link/button overlay for clickability, similar to the image's example */}
-      <a href="/shop" className="absolute inset-0 z-10" aria-label={`View ${title} collection`}></a>
+      <Link to="/shop" className="absolute inset-0 z-10" aria-label={`View ${title} collection`}></Link>
     </div>
   );
 };
