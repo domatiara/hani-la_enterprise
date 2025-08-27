@@ -73,7 +73,7 @@ export default function Navbar() {
           </div>
 
           <button 
-            className="md:hidden text-[#2A1103] hover:text-[#ec8733] transition-colors" 
+            className="md:hidden text-white hover:text-[#D47125] transition-colors" 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
@@ -84,7 +84,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#f7c6ab] px-6 py-4 space-y-4 flex flex-col">
+        <div className="md:hidden bg-white px-6 py-4 space-y-4 flex flex-col text-[#2A1103]">
           <Link to='/' onClick={() => setMobileMenuOpen(false)} className="hover:text-[#D47125] text-sm font-[outfit]">HOME</Link>
           <Link to='/shop' onClick={() => setMobileMenuOpen(false)} className="hover:text-[#D47125] text-sm font-[outfit]">SHOP</Link>
           <Link to='/about-us' onClick={() => setMobileMenuOpen(false)} className="hover:text-[#D47125] text-sm font-[outfit]">ABOUT US</Link>

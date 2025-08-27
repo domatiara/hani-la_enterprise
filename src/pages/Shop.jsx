@@ -71,7 +71,7 @@ const AllProducts = () => {
       <ToastContainer />
       <Navbar />
 
-      <section className="relative overflow-hidden h-[40vh] md:h-[75vh] lg:h-[80vh] flex items-center justify-center">
+      <section className="relative overflow-hidden h-[40vh] md:h-[75vh] lg:h-[80vh] sm:h-[60vh] flex items-center justify-center mt-10">
         {/* CORRECTED: Use the imported image module */}
         <img
           src={shopPageImage}

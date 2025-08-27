@@ -57,7 +57,7 @@ export default function Contact() {
         <>
             <Navbar />
 
-            <main className="min-h-screen font-[outfit] text-[#2A1103]">
+            <main className="min-h-screen font-[outfit] text-[#2A1103] mt-10">
                 {/* Hero Section */}
                 <section className="bg-gray-100 py-20">
                     <div className="max-w-6xl mx-auto px-4 text-center mt-10">
