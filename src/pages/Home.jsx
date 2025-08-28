@@ -5,15 +5,38 @@ import ProductCard from "../components/ProductCard";
 import CollectionCard from "../components/CollectionCard"; // Import the CollectionCard
 import HomeVideo from "../assets/videos/Home.mp4";
 import { Link } from "react-router"; // Ensure this import is correct for your react-router version
-import React, { useRef } from 'react'; // Import useRef for scrolling
+import React, { useRef, useState, useEffect } from 'react'; // Import useRef for scrolling
 import { Leaf, Shield, Award, Heart } from 'lucide-react';
 import sb from "../assets/images/raw-shea.jpg";
 import hc from "../assets/images/hair-cream-f.jpg";
 import bc from "../assets/images/body-cream-f.jpg";
 import bs from "../assets/images/black-soap.jpg";
+import { BeatLoader } from "react-spinners";
 
 export default function Home() {
+     // Add state variables for loading and error
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(false);
 
+    // Simulate a data fetch with a timeout
+    useEffect(() => {
+        setTimeout(() => {
+            // In a real application, you would fetch data here and update the state
+            // For example:
+            // fetch('your-api-endpoint')
+            // .then(response => response.json())
+            // .then(data => {
+            //   setIsLoading(false);
+            // })
+            // .catch(err => {
+            //   setError(true);
+            //   setIsLoading(false);
+            // });
+
+            // Simulate a successful load
+            setIsLoading(false);
+        }, 2000); // 2-second delay to show the loader
+    }, []);
     
    
 
@@ -106,6 +129,23 @@ export default function Home() {
             description: "Suitable for all skin types including sensitive skin, delivering results without irritation."
         }
     ];
+
+    if (isLoading) {
+        return (
+            <div className="flex flex-col items-center justify-center min-h-screen bg-white text-[#2A1103] font-[outfit]">
+                <BeatLoader size={50} color="#2A1103" />
+                <p className="mt-4 text-xl font-semibold">Loading ...</p>
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className="flex flex-col items-center justify-center min-h-screen bg-white text-[#2A1103]">
+                <h1 className="font-[outfit]">something went wrong ...</h1>
+            </div>
+        );
+    }
 
 
     return (

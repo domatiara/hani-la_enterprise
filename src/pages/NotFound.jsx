@@ -18,7 +18,7 @@ export default function NotFound() {
       <Navbar />
 
       {/* Main content area, centered vertically and horizontally */}
-      <main className="flex-grow flex items-center justify-center px-4 py-16 sm:px-6 lg:px-8 mt-10">
+      <main className="flex-grow flex items-center justify-center px-4 py-16 sm:px-6 lg:px-8 mt-20">
         <div className="max-w-md mx-auto text-center font-[outfit] text-[#2A1103]">
           {/* Large, prominent 404 text */}
           <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold font-[display] mb-4">

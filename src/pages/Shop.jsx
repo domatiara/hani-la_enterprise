@@ -71,28 +71,27 @@ const AllProducts = () => {
       <ToastContainer />
       <Navbar />
 
-      <section className="relative overflow-hidden h-[40vh] md:h-[75vh] lg:h-[80vh] sm:h-[60vh] flex items-center justify-center mt-10">
-        {/* CORRECTED: Use the imported image module */}
-        <img
-          src={shopPageImage}
-          alt="Hani-Lah Shea Products"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/75 z-10 "></div>
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Hani-Lah Shea Products
-          </h1>
-          <p className="text-xl text-white mb-8 max-w-3xl mx-auto leading-relaxed">
-            Embrace the Beauty of Shea Butter. <br />
-            Discover the secret to radiant, healthy skin with Hani-lah products.
-            From luxurious soaps to nourishing creams and pure, raw shea butter,
-            our handcrafted creations are designed to pamper your skin with the
-            goodness of nature. <br />
-            Shop Hani-lah Shea Products today!
-          </p>
-        </div>
-      </section>
+      <section class="relative overflow-hidden h-[50vh] sm:h-[70vh] md:h-[60vh] lg:h-[80vh] flex items-center justify-center mt-30 lg:mt-20 md:mt-25">
+  <img
+    src={shopPageImage}
+    alt="Hani-Lah Shea Products"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+  <div class="absolute inset-0 bg-black/75 z-10"></div>
+  <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-8">
+    <h1 class="text-3xl sm:text-xl md:text-4xl font-bold text-white mb-6 leading-tight">
+      Hani-Lah Shea Products
+    </h1>
+    <p class="text-lg md:text-xl sm:text-sm text-white mb-8 max-w-3xl mx-auto leading-relaxed">
+      Embrace the Beauty of Shea Butter. <br />
+      Discover the secret to radiant, healthy skin with Hani-lah products.
+      From luxurious soaps to nourishing creams and pure, raw shea butter,
+      our handcrafted creations are designed to pamper your skin with the
+      goodness of nature. <br />
+      Shop Hani-lah Shea Products today!
+    </p>
+  </div>
+</section>
 
       {/* Filter Bar */}
       <section className="py-6 border-b border-gray-100 bg-white sticky top-0 z-10 shadow-sm">
